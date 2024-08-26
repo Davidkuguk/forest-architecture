@@ -77,7 +77,7 @@ img {
   background-image: url(../img/hero.jpg);
   background-repeat: no-repeat;
   background-size: cover;
-  background-position: center;
+  background-position: center center;
   padding: 5rem 0;
   color: var(--blanco);
 }
@@ -85,11 +85,14 @@ img {
 .contenido-header {
   display: flex;
   flex-direction: column;
-  height: calc(60rem - 4rem);
+  height: 100vh;
   justify-content: space-between;
 }
 
 .nombre-sitio {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   font-weight: 100;
 }
 
@@ -104,10 +107,18 @@ img {
 }
 
 .telefono {
+  display: flex;
+  gap: 1rem;
+  font-size: 2rem;
 }
 .telefono::before {
+  display: block;
   content: "";
-  background-image: url;
+  width: 4rem;
+  height: 4rem;
+  background-image: url(../img/telefono.png);
+  background-repeat: no-repeat;
+  background-position: center center;
 }
 
 .navegacion {
@@ -138,11 +149,37 @@ img {
   color: #111111;
 }
 
+/* ARREGLAR */
 .slogan {
   display: flex;
-  justify-content: flex-end;
-  align-items: flex-end;
+  justify-content: center;
+  align-items: center;
   flex-direction: column;
+  padding-bottom: 70%;
+}
+
+.slogan h2,
+.slogan p {
+  margin: 0;
+}
+
+/* NOSOTROS */
+.nosotros {
+  display: grid;
+  grid-template-rows: repeat(2, 1fr);
+  background-image: url(../img/nosotros.jpg);
+  background-repeat: no-repeat;
+  background-position: bottom center;
+}
+
+.contenido-nosotros {
+  background-color: #fff;
+  padding: 5rem;
+}
+
+.contenido-nosotros h2,
+.contenido-nosotros p {
+  margin-bottom: 1rem;
 }
 
 @media (min-width: 768px) {
@@ -173,5 +210,69 @@ img {
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
+    width: 100%;
+  }
+
+  .nosotros {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .contenido-nosotros {
+    grid-column: 2/4;
+  }
+}
+
+@media (min-width: 767px) {
+  .nombre-sitio {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .contacto {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .link {
+    padding: 0.78rem;
+  }
+
+  .slogan {
+    display: flex;
+    justify-content: end;
+    align-items: end;
+    flex-direction: column;
+    margin-bottom: 2rem; /* Agrega un margen inferior para espaciamiento */
+    padding-bottom: 2%;
+  }
+}
+
+@media (min-width: 1200px) {
+  .contenido-header {
+    max-width: 150rem;
+  }
+
+  .logo {
+    display: flex;
+    justify-content: flex-start;
+    align-items: end;
+  }
+
+  .nombre-sitio {
+    display: flex;
+    flex-direction: row;
+    align-items: start;
+    justify-content: start;
+  }
+
+  .navegacion {
+    justify-content: space-around;
+    gap: 2rem;
+  }
+
+  .link {
+    font-size: 2.2rem;
   }
 }
